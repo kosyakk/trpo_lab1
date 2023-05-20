@@ -1,7 +1,8 @@
 #include "filetracking.h"
 
-FileTracking::FileTracking() {};
-FileTracking::~FileTracking() {};
+FileTracking FileTracking::m_instance;
+
+FileTracking::FileTracking(QObject *parent) : QObject(parent){}
 
 bool FileTracking::checkForExistence(QString filepath)
 {

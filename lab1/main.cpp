@@ -7,17 +7,17 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    FileTracking tracking;
+    //FileTracking tracking;
 
-    QObject::connect(&tracking, &FileTracking::changeFile, &ConsoleOutput::getInstance(), &ConsoleOutput::output);
+    QObject::connect(&FileTracking::getInstance(), &FileTracking::changeFile, &ConsoleOutput::getInstance(), &ConsoleOutput::output);
 
-    tracking.addFile("C:/test/empty.txt");
-    tracking.addFile("C:/test/notEmpty.txt");
-    tracking.addFile("C:/test/willDelete.txt");
+    FileTracking::getInstance().addFile("C:/test/empty.txt");
+    FileTracking::getInstance().addFile("C:/test/notEmpty.txt");
+    FileTracking::getInstance().addFile("C:/test/willDelete.txt");
 
     while(true)
     {
-        tracking.update();
+        FileTracking::getInstance().update();
     }
 
     return a.exec();

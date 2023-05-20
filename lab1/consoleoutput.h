@@ -5,20 +5,20 @@
 
 #include "statefile.h"
 
-class Output : public QObject
+class ConsoleOutput : public QObject
 {
     Q_OBJECT
 
 public:
-    static Output& getInstance() { return m_instance; }
+    static ConsoleOutput& getInstance() { return m_instance; }
 
 public slots:
     void output(StateFile file);
 
 private:
-    static Output m_instance;
+    static ConsoleOutput m_instance;
 
-    Output(QObject *parent = nullptr);
+    ConsoleOutput(QObject *parent = nullptr);
 };
 
 #endif // OUTPUT_H

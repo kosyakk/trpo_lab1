@@ -3,7 +3,7 @@
 
 #include <QVector>
 
-#include "output.h"
+#include "consoleoutput.h"
 
 class ThreadWorker;
 
@@ -12,8 +12,7 @@ class FileTracking : public QObject
     Q_OBJECT
 
 public:
-    FileTracking();
-    ~FileTracking();
+    static FileTracking& getInstance() { return m_instance; }
 
     bool checkForExistence(QString filepath);
     void addFile(QString filepath);
@@ -25,6 +24,10 @@ signals:
 
 private:
     QVector<StateFile> m_filesForCheck;
+
+    static FileTracking m_instance;
+
+    FileTracking(QObject *parent = nullptr);
 };
 
 

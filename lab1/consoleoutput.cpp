@@ -1,11 +1,11 @@
-#include "output.h"
+#include "consoleoutput.h"
 #include <iostream>
 
-Output Output::m_instance;
+ConsoleOutput ConsoleOutput::m_instance;
 
-Output::Output(QObject *parent) : QObject(parent){}
+ConsoleOutput::ConsoleOutput(QObject *parent) : QObject(parent){}
 
-void Output::output(StateFile file)
+void ConsoleOutput::output(StateFile file)
 {
     std::cout << file.getFilePath().toStdString();
 
