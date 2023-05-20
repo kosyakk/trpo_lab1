@@ -24,9 +24,9 @@ void Output::output(StateFile file)
         std::cout << " file changed. Size: " << file.getSize() << std::endl;
         break;
 
-    case StateFile::State::DELETED:
-        std::cout << " file deleted." << std::endl;
-        break;
+    //case StateFile::State::DELETED:
+    //    std::cout << " file deleted." << std::endl;
+    //    break;
 
     default:
         break;

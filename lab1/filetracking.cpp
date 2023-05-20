@@ -23,7 +23,7 @@ void FileTracking::addFile(QString filepath)
     if (checkForExistence(filepath))
         return;
 
-    m_filesForCheck.push_back({filepath});
+    m_filesForCheck.push_back(filepath);
 
     emit changeFile(m_filesForCheck[m_filesForCheck.size()-1]);
 }

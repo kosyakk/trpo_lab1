@@ -1,6 +1,8 @@
 #ifndef OUTPUT_H
 #define OUTPUT_H
 
+#include <QObject>
+
 #include "statefile.h"
 
 class Output : public QObject

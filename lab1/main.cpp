@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
     FileTracking tracking;
 
-    QObject::connect(&tracking, &FileTracking::changeFile, &Output::getInstance(), &Output::output);
+    QObject::connect(&tracking, &FileTracking::changeFile, &ConsoleOutput::getInstance(), &ConsoleOutput::output);
 
     tracking.addFile("C:/test/empty.txt");
     tracking.addFile("C:/test/notEmpty.txt");

@@ -1,28 +1,25 @@
 #ifndef FILESTATE_H
 #define FILESTATE_H
 
-#include <QObject>
 #include <QString>
 #include <QDir>
 
-class StateFile : public QObject
+class StateFile
 {
-    Q_OBJECT
-
 public:
 
     enum State
     {
         NOT_EXIST,
         EXIST,
-        CHANGED,
-        DELETED
+        CHANGED
+        //DELETED
     };
 
     StateFile() = default;
     StateFile(QString path);
-    StateFile(const StateFile& file);
-    StateFile(StateFile&& file);
+    //StateFile(const StateFile& file);
+    //StateFile(StateFile&& file);
     ~StateFile() = default;
 
     State getState();

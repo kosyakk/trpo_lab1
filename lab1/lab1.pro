@@ -15,11 +15,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += main.cpp \
-    output.cpp \
     filetracking.cpp \
-    statefile.cpp
+    statefile.cpp \
+    consoleoutput.cpp
 
 HEADERS += \
-    output.h \
     filetracking.h \
-    statefile.h
+    statefile.h \
+    consoleoutput.h

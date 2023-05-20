@@ -12,11 +12,12 @@ StateFile::StateFile(QString path)
     }
     else
     {
-        m_fileSize = 0;
+        m_fileSize = -1;
         m_state = State::NOT_EXIST;
     }
 }
 
+/*
 StateFile::StateFile(const StateFile& file) : QObject()
 {
     m_filePath = file.m_filePath;
@@ -30,6 +31,7 @@ StateFile::StateFile(StateFile&& file)
     m_fileSize = file.m_fileSize;
     m_state = file.m_state;
 }
+*/
 
 StateFile::State StateFile::getState()
 {
@@ -64,7 +66,7 @@ bool StateFile::update()
         {
 
         case NOT_EXIST:
-        case DELETED:
+        //case DELETED:
             m_state = EXIST;
             m_fileSize = currentSize;
             stateNow = true;
@@ -89,18 +91,18 @@ bool StateFile::update()
         switch (m_state)
         {
 
-        case NOT_EXIST:
-            break;
+        //case NOT_EXIST:
+        //    break;
 
         case EXIST:
         case CHANGED:
-            m_state = DELETED;
+            m_state = NOT_EXIST;
             m_fileSize = -1;
             stateNow = true;
             break;
 
-        case DELETED:
-            break;
+        //case DELETED:
+        //    break;
 
         default:
             break;
