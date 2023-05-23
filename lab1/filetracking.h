@@ -5,8 +5,6 @@
 
 #include "consoleoutput.h"
 
-class ThreadWorker;
-
 class FileTracking : public QObject
 {
     Q_OBJECT
